@@ -1,0 +1,506 @@
+{
+    "type": "record",
+    "name": "WeatherForecast",
+    "fields": [
+        {
+            "name": "location",
+            "type": {
+                "type": "record",
+                "name": "WeatherForecast.location",
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "region",
+                        "type": "string"
+                    },
+                    {
+                        "name": "country",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lat",
+                        "type": "float"
+                    },
+                    {
+                        "name": "lon",
+                        "type": "float"
+                    },
+                    {
+                        "name": "tz_id",
+                        "type": "string"
+                    },
+                    {
+                        "name": "localtime_epoch",
+                        "type": "int"
+                    },
+                    {
+                        "name": "localtime",
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "current",
+            "type": {
+                "type": "record",
+                "name": "WeatherForecast.current",
+                "fields": [
+                    {
+                        "name": "last_updated_epoch",
+                        "type": "int"
+                    },
+                    {
+                        "name": "last_updated",
+                        "type": "string"
+                    },
+                    {
+                        "name": "temp_c",
+                        "type": "int"
+                    },
+                    {
+                        "name": "temp_f",
+                        "type": "float"
+                    },
+                    {
+                        "name": "is_day",
+                        "type": "int"
+                    },
+                    {
+                        "name": "condition",
+                        "type": {
+                            "type": "record",
+                            "name": "WeatherForecast.current.condition",
+                            "fields": [
+                                {
+                                    "name": "text",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "icon",
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "code",
+                                    "type": "int"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "wind_mph",
+                        "type": "float"
+                    },
+                    {
+                        "name": "wind_kph",
+                        "type": "float"
+                    },
+                    {
+                        "name": "wind_degree",
+                        "type": "int"
+                    },
+                    {
+                        "name": "wind_dir",
+                        "type": "string"
+                    },
+                    {
+                        "name": "pressure_mb",
+                        "type": "int"
+                    },
+                    {
+                        "name": "pressure_in",
+                        "type": "float"
+                    },
+                    {
+                        "name": "precip_mm",
+                        "type": "float"
+                    },
+                    {
+                        "name": "precip_in",
+                        "type": "int"
+                    },
+                    {
+                        "name": "humidity",
+                        "type": "int"
+                    },
+                    {
+                        "name": "cloud",
+                        "type": "int"
+                    },
+                    {
+                        "name": "feelslike_c",
+                        "type": "float"
+                    },
+                    {
+                        "name": "feelslike_f",
+                        "type": "float"
+                    },
+                    {
+                        "name": "vis_km",
+                        "type": "int"
+                    },
+                    {
+                        "name": "vis_miles",
+                        "type": "int"
+                    },
+                    {
+                        "name": "uv",
+                        "type": "int"
+                    },
+                    {
+                        "name": "gust_mph",
+                        "type": "int"
+                    },
+                    {
+                        "name": "gust_kph",
+                        "type": "float"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "forecast",
+            "type": {
+                "type": "record",
+                "name": "WeatherForecast.forecast",
+                "fields": [
+                    {
+                        "name": "forecastday",
+                        "type": {
+                            "type": "array",
+                            "items": {
+                                "type": "record",
+                                "name": "WeatherForecast.forecast.forecastday",
+                                "fields": [
+                                    {
+                                        "name": "date",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "date_epoch",
+                                        "type": "int"
+                                    },
+                                    {
+                                        "name": "day",
+                                        "type": {
+                                            "type": "record",
+                                            "name": "WeatherForecast.forecast.forecastday.day",
+                                            "fields": [
+                                                {
+                                                    "name": "maxtemp_c",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "maxtemp_f",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "mintemp_c",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "mintemp_f",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "avgtemp_c",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "avgtemp_f",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "maxwind_mph",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "maxwind_kph",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "totalprecip_mm",
+                                                    "type": "float"
+                                                },
+                                                {
+                                                    "name": "totalprecip_in",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "totalsnow_cm",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "avgvis_km",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "avgvis_miles",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "avghumidity",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "daily_will_it_rain",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "daily_chance_of_rain",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "daily_will_it_snow",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "daily_chance_of_snow",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "condition",
+                                                    "type": {
+                                                        "type": "record",
+                                                        "name": "WeatherForecast.forecast.forecastday.day.condition",
+                                                        "fields": [
+                                                            {
+                                                                "name": "text",
+                                                                "type": "string"
+                                                            },
+                                                            {
+                                                                "name": "icon",
+                                                                "type": "string"
+                                                            },
+                                                            {
+                                                                "name": "code",
+                                                                "type": "int"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "name": "uv",
+                                                    "type": "int"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "astro",
+                                        "type": {
+                                            "type": "record",
+                                            "name": "WeatherForecast.forecast.forecastday.astro",
+                                            "fields": [
+                                                {
+                                                    "name": "sunrise",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "sunset",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "moonrise",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "moonset",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "moon_phase",
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "name": "moon_illumination",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "is_moon_up",
+                                                    "type": "int"
+                                                },
+                                                {
+                                                    "name": "is_sun_up",
+                                                    "type": "int"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "hour",
+                                        "type": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "record",
+                                                "name": "WeatherForecast.forecast.forecastday.hour",
+                                                "fields": [
+                                                    {
+                                                        "name": "time_epoch",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "time",
+                                                        "type": "string"
+                                                    },
+                                                    {
+                                                        "name": "temp_c",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "temp_f",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "is_day",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "condition",
+                                                        "type": {
+                                                            "type": "record",
+                                                            "name": "WeatherForecast.forecast.forecastday.hour.condition",
+                                                            "fields": [
+                                                                {
+                                                                    "name": "text",
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "name": "icon",
+                                                                    "type": "string"
+                                                                },
+                                                                {
+                                                                    "name": "code",
+                                                                    "type": "int"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "wind_mph",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "wind_kph",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "wind_degree",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "wind_dir",
+                                                        "type": "string"
+                                                    },
+                                                    {
+                                                        "name": "pressure_mb",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "pressure_in",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "precip_mm",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "precip_in",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "snow_cm",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "humidity",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "cloud",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "feelslike_c",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "feelslike_f",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "windchill_c",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "windchill_f",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "heatindex_c",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "heatindex_f",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "dewpoint_c",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "dewpoint_f",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "will_it_rain",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "chance_of_rain",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "will_it_snow",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "chance_of_snow",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "vis_km",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "vis_miles",
+                                                        "type": "int"
+                                                    },
+                                                    {
+                                                        "name": "gust_mph",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "gust_kph",
+                                                        "type": "float"
+                                                    },
+                                                    {
+                                                        "name": "uv",
+                                                        "type": "int"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
