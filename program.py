@@ -18,3 +18,4 @@ with open("test.json") as f:
     reader = DataFileReader(open("test.avro", "rb"), DatumReader())
     ic(reader.schema)
     reader.close()
+
